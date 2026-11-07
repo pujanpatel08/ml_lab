@@ -29,7 +29,7 @@ My general profile and writing rules (follow the writing rules in every reply):
 - Installed: torch, mlx, mlx-lm, wandb, ipykernel, huggingface_hub. Module 00 adds openai, matplotlib, and ruff (dev).
 - Accounts, all on my personal email: Hugging Face `pujanpatel8` (logged in with `uv run hf auth login`), Weights & Biases (`uv run wandb login`). The HF cache is `~/.cache/huggingface/hub`.
 - Tools: iTerm2, VS Code with the Jupyter extension (notebooks use the `.venv` kernel), Cursor, Docker Desktop, LM Studio, Ollama.
-- RAM: unknown. Ask me once, then record it here, because it decides which models fit.
+- Hardware: Apple M5, 24 GB unified memory (checked Nov 7, 2026). Metal lets the GPU use about 17.8 GB by default (MLX `max_recommended_working_set_size`), so that is the real budget for weights plus KV cache. Fits well: 7–8B at 4-bit (about 4.5 GB) or 8-bit (about 8.5 GB), 14B at 4-bit (about 8 GB), and QLoRA on a 4-bit 7–8B. Tight: 7–8B in bf16 (14–16 GB) and 24B at 4-bit (about 13 GB). Rent a GPU for 32B and up, LoRA on a bf16 7B, and full fine-tuning above about 1B.
 
 ## Course status
 
