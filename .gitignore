@@ -16,6 +16,7 @@ wandb/
 # ML artifacts: weights, downloaded data, generated data, logs
 checkpoints/
 logs/
+lessons/00_uv/practice_app/
 lessons/06_gpt_from_scratch/data/
 lessons/07_mlx_lora/data/
 lessons/07_mlx_lora/data_small/

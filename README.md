@@ -2,7 +2,7 @@
 
 Personal workspace for learning to build, train, fine-tune, and serve neural networks and LLMs.
 
-- `lessons/` is the course, one module per folder. Start at `lessons/README.md`.
+- `lessons/` is the course, one notebook per module folder. Start at `lessons/00_uv/uv_basics.ipynb`.
 - `experiments/` (create when needed) is for my own projects and tests.
 - `src/ml_lab/` is for reusable code I want to import from notebooks.
 
