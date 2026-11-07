@@ -16,6 +16,6 @@ Statuses: Not built, Built not started, In progress, Done.
 
 ## Stuck log
 
-Short notes on what was hard and what fixed it, newest first. Use these to shape later modules.
+Short notes on what was hard and what fixed it, newest first.
 
 - (nothing yet)
