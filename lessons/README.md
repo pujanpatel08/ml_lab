@@ -20,13 +20,11 @@ Put your own experiments in `experiments/` (create it when you need it), not ins
 | 01 | LM Studio | Run open-weight LLMs locally, understand quantization, call a local model from Python | Ready |
 | 02 | PyTorch basics | Work with tensors, use your Mac's GPU, understand autograd, write a training loop | Ready |
 | 03 | micrograd | Build backpropagation from scratch and understand what `loss.backward()` actually does | Ready |
-| 04 | Hugging Face | Pull models and datasets from the Hub, use tokenizers and `transformers`, push your own models | Next |
-| 05 | Training + W&B | Train a real neural network on a real dataset and track every run in Weights & Biases | Next |
-| 06 | GPT from scratch | Build and train a small transformer language model end to end | Later |
-| 07 | MLX + LoRA | Fine-tune a real open-weight LLM on your Mac with your own data | Later |
-| 08 | Serving | Load your fine-tuned model in LM Studio or Ollama and call it from a FastAPI backend | Later |
-
-Modules 04 onward get built as you finish the earlier ones, so they match where you actually are.
+| 04 | Hugging Face | Pull models and datasets from the Hub, use tokenizers and `transformers`, push your own models | Ready |
+| 05 | Training + W&B | Train a real neural network on a real dataset and track every run in Weights & Biases | Ready |
+| 06 | GPT from scratch | Build and train a small transformer language model end to end | Ready |
+| 07 | MLX + LoRA | Fine-tune a real open-weight LLM on your Mac with your own data | Ready |
+| 08 | Serving | Load your fine-tuned model in LM Studio or Ollama and call it from a FastAPI backend | Ready |
 
 ## Why there's no TensorFlow module
 
