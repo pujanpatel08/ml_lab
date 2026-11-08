@@ -14,6 +14,16 @@
 
 Statuses: Not built, Built not started, In progress, Done.
 
+## Course changes
+
+- 2026-11-07: every lesson now lives entirely in its notebook. Module READMEs were folded in and deleted, and `00_uv/uv_basics.ipynb` is new. Gaps filled:
+  - 02, sections 9 to 11: geometry of gradient descent, saddles and mini-batch noise, momentum/Adam/AdamW built by hand and checked against `torch.optim`.
+  - 03, sections 8 and 9: backprop with matrices, the softmax + cross-entropy gradient, a spiral classifier trained with hand-written gradients.
+  - 05, section 4: initialization, vanishing and exploding gradients, clipping, and `train/grad_norm` logging.
+  - 06: gradient clipping in the training loop, plus a note on GPT-2 initialization.
+- Testing so far (scratch copies, outputs cleared): 00, 02, 03 ran top to bottom with no errors. 05 and 06 ran with shortened training (1 epoch, 300 iterations). 01, 04, 07, 08 were checked for unchanged code only, not executed. Still to do: full-length runs of 05 and 06 on the M5, and a first real run of 04, 07, 08.
+- Kernel: notebooks use the `ml-lab (3.14.2)` kernel from `ML_Lab/.venv`. If a notebook can't connect, open `ML_Lab` in its own local VS Code window, then Select Kernel > Python Environments > `.venv`.
+
 ## Stuck log
 
 Short notes on what was hard and what fixed it, newest first.
