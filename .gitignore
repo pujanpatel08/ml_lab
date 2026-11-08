@@ -13,6 +13,10 @@ wandb/
 # macOS
 .DS_Store
 
+# Everything the course downloads (models, datasets, caches) and the machine-specific uv.toml
+.cache/
+/uv.toml
+
 # ML artifacts: weights, downloaded data, generated data, logs
 checkpoints/
 logs/
