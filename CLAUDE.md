@@ -60,13 +60,13 @@ Companion material: Karpathy's "Neural Networks: Zero to Hero" (modules 03 and 0
 
 ## Things to know when helping me debug
 
-- Modules 04 to 08 were tested end to end before delivery, but against tiny stand-in models and datasets in the same formats as the real ones (Hugging Face was unreachable from the build environment). The MLX fine-tuning pipeline ran for real on CPU with a tiny Qwen2 model. Real accuracies, training times, and model quality have not been verified on my M5, so the first real run of 04, 05, and 07 may surface issues. Treat errors there as possible lesson bugs.
+- On 2026-11-07 every notebook was run for real on my M5 (in scratch copies of the repo, W&B offline), and the lesson text was corrected against the real output. Measured: 04 about 4.5 minutes including about 1.8 GB of downloads; 05 about 100 seconds for the whole notebook; 06 about 6 minutes (the 3,000-step training is about 3.3 minutes, final val loss about 1.54); 07 about 20 minutes including the 3 GB download (training takes 3 to 4 minutes at about 5 GB peak memory; 99% exact match fine-tuned, 97% at 4-bit); 08 about 1 minute. Module 01 ran against a stand-in OpenAI-compatible server (`mlx_lm.server`), because LM Studio has no chat model installed here. Not tested: the optional W&B sweep in 05 and the Hub-push cells in 04 and 07. Treat a new error as a real bug to investigate, not noise.
 - Library versions the lessons were written against: transformers 5.x (where `apply_chat_template` defaults to `return_dict=True`, so notebooks pass it explicitly), huggingface_hub 2.4, datasets 5.x, mlx 0.32, mlx-lm 0.32.2, wandb 0.31. The mlx-lm CLI flags were checked against the 0.32.2 source.
 - Module 07 runs training, fuse, and convert as subprocesses (`python -m mlx_lm lora|fuse|convert`) and streams their output into the notebook. `mlx_lm convert` refuses to overwrite an existing output folder.
 - Module 08: `mlx_lm.server` maps the model name `default_model` to whatever model it was started with, so clients send `model="default_model"`. `app.py` reads `MODEL_BASE_URL`, `MODEL_NAME`, and `MODEL_API_KEY` from the environment.
 - Module 01's notebook needs the LM Studio server running with a chat model loaded. It skips LM Studio's built-in embedding model when picking a model.
-- Gated models (Llama, Gemma) need the license accepted on the Hub first. If W&B is unavailable, `WANDB_MODE=offline` works and `uv run wandb sync` uploads later.
-- Close LM Studio (or unload its model) before module 07's training. Training uses roughly 8 to 12 GB.
+- Gated models (Llama, Gemma) need the license accepted on the Hub first. If W&B is unavailable, `WANDB_MODE=offline` works, and `uv run wandb sync <run folder>` uploads later (module 07 writes its runs to `adapters/wandb/`, the other modules to `wandb/offline-run-*`).
+- Close LM Studio (or unload its model) before module 07's training. Training itself peaks at about 5 GB (measured), but a loaded LM Studio model and Docker compete for the same 24 GB.
 
 ## Decisions made while setting up (Nov 6 to 7, 2026)
 
