@@ -5,7 +5,7 @@ Run these from the ML_Lab folder (notebook section 9 explains each one):
     uv run modal run lessons/09_modal/endpoint_demo.py      # call a function once, then everything shuts down
     uv run modal serve lessons/09_modal/endpoint_demo.py    # temporary URL that reloads when you save this file
     uv run modal deploy lessons/09_modal/endpoint_demo.py   # permanent URL, scales to zero when idle
-    uv run modal app stop ml-lab-endpoint                   # take the deployed app down again
+    uv run modal app stop ml-lab-endpoint                   # take it down again (asks to confirm, --yes skips)
 
 Everything here runs on CPU, so a call costs a tiny fraction of a cent.
 """
